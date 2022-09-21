@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/home_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Gunun Yemegi"
+                android:textAlignment="center"
+                android:textColor="#323232"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ŞEHRİYE ÇORBA"
+                android:textColor="#323232"
+                android:textSize="21dp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TAVUKLU SULTAN KEBABI"
+                android:textColor="#323232"
+                android:textSize="21dp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SOSLU MAKARNA"
+                android:textColor="#323232"
+                android:textSize="21dp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SHOPSKA SALATA"
+                android:textColor="#323232"
+                android:textSize="21dp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/aboutSchoolButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rounded_btn_1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:paddingLeft="10dp"
+                        android:src="@drawable/school" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Okul ve Bolum Hakkinda"
+                        android:textAlignment="center"
+                        android:textColor="#323232"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/threeButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:justifyContent="space_around"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aboutSchoolButton">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/announcementButton"
+                        android:layout_width="90dp"
+                        android:layout_height="120dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="20dp">
+
+                        <LinearLayout
+                            android:layout_width="90dp"
+                            android:layout_height="120dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/campaign" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Duyurular"
+                                android:textAlignment="center"
+                                android:textColor="#323232"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/internShipButton"
+                        android:layout_width="90dp"
+                        android:layout_height="120dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="20dp">
+
+                        <LinearLayout
+                            android:layout_width="90dp"
+                            android:layout_height="120dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Staj"
+                                android:textAlignment="center"
+                                android:textColor="#323232"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/jobButton"
+                        android:layout_width="90dp"
+                        android:layout_height="120dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="20dp">
+
+                        <LinearLayout
+                            android:layout_width="90dp"
+                            android:layout_height="120dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/euro_symbol" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Is"
+                                android:textAlignment="center"
+                                android:textColor="#323232"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/flexboxLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_around"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/threeButtons">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/firstGrade"
+                        android:layout_width="160dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="1. Sinif"
+                            android:textAlignment="center"
+                            android:textColor="#323232"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/secondGrade"
+                        android:layout_width="160dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="2. Sinif"
+                            android:textAlignment="center"
+                            android:textColor="#323232"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/thirdGrade"
+                        android:layout_width="160dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="3. Sinif"
+                            android:textAlignment="center"
+                            android:textColor="#323232"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fourthGrade"
+                        android:layout_width="160dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#FFC107"
+                        app:cardCornerRadius="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="4. Sinif"
+                            android:textAlignment="center"
+                            android:textColor="#323232"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </com.google.android.flexbox.FlexboxLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
