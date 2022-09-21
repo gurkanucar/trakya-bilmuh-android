@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_btn_1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_btn_2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dayMonthText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20/09"
+                android:textAlignment="center"
+                android:textColor="#FFC107"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/yearText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2022"
+                android:textAlignment="center"
+                android:textColor="#FFC107"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/announcementTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="4. Sınıf Bilgisayar Mühendisliği Öğrencilerinin Dikkatine"
+            android:textColor="#323232"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/announcementDetailsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/announcementContentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="2022-2023 Eğitim Öğretim Yılı Güz Dönemi Ders Programı ektedir.
+            \n\nNot: Öğrenci numarası tek sayı ile bitenler A şube, çift sayı ile bitenler B şube olan dersleri seçmelidir.4. sınıf öğrencileri derslerini çakışmayacak şekilde seçmelidir."
+            android:textColor="#323232"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/announcementOpenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#323232"
+            android:text="duyuruya git"
+            android:textAllCaps="false"
+            android:textColor="#FFC107" />
+    </LinearLayout>
+
+</LinearLayout>
