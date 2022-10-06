@@ -33,6 +33,10 @@ class MessageAdapter(private var data: ArrayList<MessageModel>) :
 
             dateTime.text = item.createdDateTime
 
+            if (item.link.isNullOrBlank()) {
+                messageLinkButton.visibility = View.GONE
+            }
+
 //            val isExpandable: Boolean = item.expandable
 //            announcementDetailsHolder.visibility = if (isExpandable) View.VISIBLE else View.GONE
 //

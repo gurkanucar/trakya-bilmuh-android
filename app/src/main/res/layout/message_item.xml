@@ -27,6 +27,16 @@
         app:layout_constraintTop_toBottomOf="@+id/senderName"
         tools:layout_editor_absoluteX="25dp">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/polygon1"
+            tools:layout_editor_absoluteX="49dp"
+            tools:layout_editor_absoluteY="170dp" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,35 +48,27 @@
                 android:id="@+id/messageContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="selamm"
                 android:textColor="#323232"
-                android:textSize="16sp" />
+                android:textSize="19sp" />
 
             <Button
-                android:id="@+id/announcementOpenButton"
+                android:id="@+id/messageLinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="4dp"
                 android:backgroundTint="#323232"
-                android:text="mesaja git"
+                android:text="linki aç"
                 android:textAllCaps="false"
                 android:textColor="#FFC107" />
 
         </LinearLayout>
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="3dp"
-            android:src="@drawable/polygon1"
-            tools:layout_editor_absoluteX="49dp"
-            tools:layout_editor_absoluteY="170dp" />
 
 
     </FrameLayout>
