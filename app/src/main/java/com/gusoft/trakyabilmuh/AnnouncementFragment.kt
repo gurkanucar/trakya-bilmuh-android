@@ -39,11 +39,11 @@ class AnnouncementFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getBooks()
+        fetchData()
     }
 
 
-    private fun getBooks() {
+    private fun fetchData() {
         ApiUtils.getAnnouncementsDAO().getAnnouncements().enqueue(
             object : Callback<List<Announcement>> {
                 override fun onResponse(
