@@ -8,5 +8,10 @@ class ApiUtils {
         fun getAnnouncementsDAO(): AnnouncementDAO {
             return RetrofitClient.getClient(BASE_URL).create(AnnouncementDAO::class.java)
         }
+
+
+        fun getMessageDAO(): MessageDAO {
+            return RetrofitClient.getClient(BASE_URL).create(MessageDAO::class.java)
+        }
     }
 }
