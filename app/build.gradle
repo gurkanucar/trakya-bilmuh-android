@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -32,6 +33,11 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+    buildscript {
+        dependencies {
+            classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1")
+        }
     }
 }
 
