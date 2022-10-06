@@ -11,4 +11,5 @@ data class Announcement(
     @SerializedName("link") @Expose val link: String,
     @SerializedName("title") @Expose val title: String,
     @SerializedName("createdDateTime") @Expose val createdDateTime: String,
-    ): Serializable
+     var expandable: Boolean,
+) : Serializable

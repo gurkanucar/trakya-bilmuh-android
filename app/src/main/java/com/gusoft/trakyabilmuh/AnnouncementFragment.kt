@@ -1,5 +1,6 @@
 package com.gusoft.trakyabilmuh
 
+import android.R
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.gusoft.trakyabilmuh.adapter.AnnouncementAdapter
 import com.gusoft.trakyabilmuh.databinding.FragmentAnnouncementBinding
 import com.gusoft.trakyabilmuh.model.Announcement
@@ -53,17 +53,19 @@ class AnnouncementFragment : Fragment() {
                     response.body()?.let {
                         announcementList = it as ArrayList<Announcement>
                     }
+                    Log.i("Announcement", announcementList.toString())
 
                     announcementList.reverse()
-                    adapter = AnnouncementAdapter(announcementList)
+
 
                     binding.apply {
-                        announcementsRcView.layoutManager =
-                            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-                        announcementsRcView.adapter = adapter
+                        val manager = LinearLayoutManager(requireContext())
+                        announcementsRcView.layoutManager = manager
                         announcementsRcView.setHasFixedSize(true)
+                        adapter = AnnouncementAdapter(announcementList)
+                        announcementsRcView.adapter = adapter
+                        adapter.onItemClick = ::onItemClick
                     }
-                    adapter.onItemClick = ::onItemClick
                 }
 
                 override fun onFailure(call: Call<List<Announcement>>, t: Throwable) {

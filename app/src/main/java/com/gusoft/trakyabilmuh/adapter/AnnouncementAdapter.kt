@@ -36,12 +36,13 @@ class AnnouncementAdapter(private var data: ArrayList<Announcement>) :
             dayMonthText.text =
                 "${tempDate.split("-")[2]}/${tempDate.split("-")[1]}"
             yearText.text = tempDate.split("-")[0].toString()
+
+            val isExpandable: Boolean = item.expandable
+            announcementDetailsHolder.visibility = if (isExpandable) View.VISIBLE else View.GONE
+
             announcementSummary.setOnClickListener {
-                if (announcementDetailsHolder.visibility.equals(View.VISIBLE)) {
-                    announcementDetailsHolder.visibility = View.GONE
-                } else {
-                    announcementDetailsHolder.visibility = View.VISIBLE
-                }
+                item.expandable = !item.expandable
+                notifyItemChanged(position)
             }
             announcementOpenButton.setOnClickListener { onItemClick(item) }
         }
