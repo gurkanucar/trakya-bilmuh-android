@@ -59,12 +59,11 @@ class AnnouncementFragment : Fragment() {
 
 
                     binding.apply {
-                        val manager = LinearLayoutManager(requireContext())
-                        announcementsRcView.layoutManager = manager
+                        announcementsRcView.layoutManager = LinearLayoutManager(requireContext())
                         announcementsRcView.setHasFixedSize(true)
                         adapter = AnnouncementAdapter(announcementList)
-                        announcementsRcView.adapter = adapter
                         adapter.onItemClick = ::onItemClick
+                        announcementsRcView.adapter = adapter
                     }
                 }
 
