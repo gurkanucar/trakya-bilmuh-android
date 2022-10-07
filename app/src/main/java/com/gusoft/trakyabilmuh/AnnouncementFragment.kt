@@ -55,7 +55,7 @@ class AnnouncementFragment : Fragment() {
                     }
                     Log.i("Announcement", announcementList.toString())
 
-                    announcementList.reverse()
+                  //  announcementList.reverse()
 
 
                     binding.apply {
