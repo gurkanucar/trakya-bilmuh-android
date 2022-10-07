@@ -1,12 +1,16 @@
 package com.gusoft.trakyabilmuh
 
+import android.R.attr.label
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.messaging.EnhancedIntentService
 import com.google.firebase.messaging.FirebaseMessaging
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +28,10 @@ class MainActivity : AppCompatActivity() {
 
             // Log and toast
             Log.d("tag", token)
+            val clipboard: ClipboardManager =
+                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("token", token)
+            clipboard.setPrimaryClip(clip)
             Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
         })
     }
