@@ -40,9 +40,11 @@ class MessageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.noDataFoundText.visibility = View.VISIBLE
         val messageType: MessageTypes = arguments?.get("messageType") as MessageTypes
         Log.i("MESSAGE FRAGMENT", "onViewCreated: $messageType")
         fetchData(messageType)
+
     }
 
     private fun fetchData(messageType: MessageTypes) {
@@ -57,10 +59,13 @@ class MessageFragment : Fragment() {
                     }
                     Log.i("Announcement", messageList.toString())
 
-                    messageList.reverse()
+                    // messageList.reverse()
 
 
                     binding.apply {
+                        if (messageList.size > 0) {
+                            noDataFoundText.visibility = View.GONE
+                        }
                         messagesRcView.layoutManager = LinearLayoutManager(requireContext())
                         messagesRcView.setHasFixedSize(true)
                         adapter = MessageAdapter(messageList)
