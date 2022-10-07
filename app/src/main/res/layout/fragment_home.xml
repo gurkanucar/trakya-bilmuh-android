@@ -23,6 +23,7 @@
             android:padding="30dp">
 
             <TextView
+                android:id="@+id/foodTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -33,34 +34,34 @@
                 android:textStyle="bold" />
 
             <TextView
-
+                android:id="@+id/food1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ŞEHRİYE ÇORBA"
+                android:text=""
                 android:textColor="#323232"
                 android:textSize="21dp" />
 
             <TextView
-
+                android:id="@+id/food2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TAVUKLU SULTAN KEBABI"
+                android:text=""
                 android:textColor="#323232"
                 android:textSize="21dp" />
 
             <TextView
-
+                android:id="@+id/food3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SOSLU MAKARNA"
+                android:text=""
                 android:textColor="#323232"
                 android:textSize="21dp" />
 
             <TextView
-
+                android:id="@+id/food4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SHOPSKA SALATA"
+                android:text=""
                 android:textColor="#323232"
                 android:textSize="21dp" />
         </LinearLayout>
@@ -76,7 +77,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/aboutSchoolButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,7 +86,8 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/rounded_btn_1"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/imageView"

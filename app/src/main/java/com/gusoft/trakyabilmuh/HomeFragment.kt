@@ -1,6 +1,8 @@
 package com.gusoft.trakyabilmuh
 
 import android.os.Bundle
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.gusoft.trakyabilmuh.databinding.FragmentHomeBinding
 import com.gusoft.trakyabilmuh.model.MessageTypes
+import com.gusoft.trakyabilmuh.util.FoodScraper
 
 
 class HomeFragment : Fragment() {
@@ -25,6 +28,21 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val foods = FoodScraper.getFoodList()
+        if (foods == null) {
+            binding.foodTitle.text = "Tatil"
+        } else {
+            binding.apply {
+                food1.text = foods[0]
+                food2.text = foods[1]
+                food3.text = foods[2]
+                food4.text = foods[3]
+            }
+
+        }
+
+
 
         binding.announcementButton.setOnClickListener {
             Navigation.findNavController(binding.root)
