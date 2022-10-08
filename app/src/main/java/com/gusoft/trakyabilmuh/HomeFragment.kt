@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val foods = FoodScraper.getFoodList()
-        if (foods == null) {
+        if (foods == null || foods.size == 0) {
             binding.foodTitle.text = "Tatil"
         } else {
             binding.apply {
