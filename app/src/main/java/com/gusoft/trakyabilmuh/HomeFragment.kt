@@ -43,55 +43,20 @@ class HomeFragment : Fragment() {
         }
 
 
+        binding.channelSettings.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_homeFragment_to_channelSettings)
+        }
 
         binding.announcementButton.setOnClickListener {
             Navigation.findNavController(binding.root)
                 .navigate(R.id.action_homeFragment_to_announcementFragment)
         }
 
-        binding.internShipButton.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable("messageType", MessageTypes.INTERNSHIP)
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-        }
-
-        binding.jobButton.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable("messageType", MessageTypes.JOB)
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-        }
 
         binding.firstGrade.setOnClickListener {
             val bundle = Bundle()
             bundle.putParcelable("messageType", MessageTypes.FIRST_GRADE)
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-        }
-
-        binding.secondGrade.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable("messageType", MessageTypes.SECOND_GRADE)
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-        }
-
-        binding.thirdGrade.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable("messageType", MessageTypes.THIRD_GRADE)
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-        }
-
-        binding.fourthGrade.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable("messageType", MessageTypes.FOURTH_GRADE)
             Navigation.findNavController(binding.root)
                 .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
 

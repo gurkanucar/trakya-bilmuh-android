@@ -20,7 +20,13 @@
             android:background="@drawable/home_background"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/channelSettings"
+                android:layout_gravity="end"
+                android:background="@drawable/notifications_active"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
 
             <TextView
                 android:id="@+id/foodTitle"
@@ -109,108 +115,42 @@
                 </LinearLayout>
 
 
-                <com.google.android.flexbox.FlexboxLayout
-                    android:id="@+id/threeButtons"
+                <androidx.cardview.widget.CardView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/announcementButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
-                    app:justifyContent="space_around"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/aboutSchoolButton">
+                    android:backgroundTint="#FFC107"
+                    app:cardCornerRadius="20dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/announcementButton"
-                        android:layout_width="90dp"
-                        android:layout_height="120dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="20dp">
+                    <LinearLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        <LinearLayout
-                            android:layout_width="90dp"
-                            android:layout_height="120dp"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="0.3"
+                            android:background="@drawable/campaign" />
 
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:background="@drawable/campaign" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:text="Duyurular"
+                            android:textAlignment="center"
+                            android:textColor="#323232"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Duyurular"
-                                android:textAlignment="center"
-                                android:textColor="#323232"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/internShipButton"
-                        android:layout_width="90dp"
-                        android:layout_height="120dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="20dp">
-
-                        <LinearLayout
-                            android:layout_width="90dp"
-                            android:layout_height="120dp"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:background="@drawable/search" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Staj"
-                                android:textAlignment="center"
-                                android:textColor="#323232"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/jobButton"
-                        android:layout_width="90dp"
-                        android:layout_height="120dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="20dp">
-
-                        <LinearLayout
-                            android:layout_width="90dp"
-                            android:layout_height="120dp"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:background="@drawable/euro_symbol" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Is"
-                                android:textAlignment="center"
-                                android:textColor="#323232"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </com.google.android.flexbox.FlexboxLayout>
+                </androidx.cardview.widget.CardView>
 
 
                 <com.google.android.flexbox.FlexboxLayout
@@ -238,63 +178,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="1. Sinif"
-                            android:textAlignment="center"
-                            android:textColor="#323232"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/secondGrade"
-                        android:layout_width="160dp"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="2. Sinif"
-                            android:textAlignment="center"
-                            android:textColor="#323232"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/thirdGrade"
-                        android:layout_width="160dp"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="3. Sinif"
-                            android:textAlignment="center"
-                            android:textColor="#323232"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fourthGrade"
-                        android:layout_width="160dp"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
-                        android:backgroundTint="#FFC107"
-                        app:cardCornerRadius="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="4. Sinif"
                             android:textAlignment="center"
                             android:textColor="#323232"
                             android:textSize="18dp"

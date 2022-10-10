@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_channelSettings"
+            app:destination="@id/channelSettings" />
     </fragment>
     <fragment
         android:id="@+id/announcementFragment"
@@ -33,6 +36,15 @@
         tools:layout="@layout/fragment_message" >
         <action
             android:id="@+id/action_messageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/channelSettings"
+        android:name="com.gusoft.trakyabilmuh.ChannelSettings"
+        android:label="fragment_channel_settings"
+        tools:layout="@layout/fragment_channel_settings" >
+        <action
+            android:id="@+id/action_channelSettings_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
