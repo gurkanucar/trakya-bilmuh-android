@@ -40,6 +40,7 @@ class ChannelAdapter(private var data: ArrayList<ChannelModel>) :
 //                item.expandable = !item.expandable
 //                notifyItemChanged(position)
 //            }
+            isSubscribed.setOnClickListener { onItemClick(item, position) }
             channelListItemRootLayout.setOnClickListener { onItemClick(item, position) }
         }
 
