@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:padding="20dp">
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
 
     <TextView
@@ -36,6 +37,18 @@
             tools:layout_editor_absoluteX="49dp"
             tools:layout_editor_absoluteY="170dp" />
 
+        <TextView
+            android:id="@+id/dateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="10/06/2022 10:30 PM"
+            android:textAlignment="textEnd"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,14 +67,13 @@
                 android:paddingRight="10dp"
                 android:text="selamm"
                 android:textColor="#323232"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/messageLinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="4dp"
                 android:backgroundTint="#323232"
                 android:text="linki aç"
@@ -73,19 +85,5 @@
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/dateTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="10/06/2022 10:30 PM"
-        android:textAlignment="textEnd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
