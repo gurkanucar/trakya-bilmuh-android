@@ -31,7 +31,7 @@ class SubscribedChannelsAdapter(private var data: ArrayList<ChannelModel>) :
             channelName.text = item.channelName
             username.text = "${item.user.name} ${item.user.surname}"
 
-            if (item.channelImageUrl.isNullOrBlank()) {
+            if (item.channelImageUrl != null && item.channelImageUrl != "") {
                 Picasso.get().load(item.channelImageUrl).into(channelImage)
             }
             channelListItemRootLayout.setOnClickListener { onItemClick(item, position) }
