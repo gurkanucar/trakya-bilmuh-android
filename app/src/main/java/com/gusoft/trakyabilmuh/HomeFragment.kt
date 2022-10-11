@@ -1,8 +1,6 @@
 package com.gusoft.trakyabilmuh
 
 import android.os.Bundle
-import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +9,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gusoft.trakyabilmuh.adapter.ChannelAdapter
+import com.google.firebase.messaging.FirebaseMessaging
 import com.gusoft.trakyabilmuh.adapter.SubscribedChannelsAdapter
 import com.gusoft.trakyabilmuh.databinding.FragmentHomeBinding
 import com.gusoft.trakyabilmuh.model.ChannelModel
-import com.gusoft.trakyabilmuh.model.MessageTypes
 import com.gusoft.trakyabilmuh.network.ApiUtils
-import com.gusoft.trakyabilmuh.util.FoodScraper
 import com.gusoft.trakyabilmuh.util.getSubscribeList
-import com.gusoft.trakyabilmuh.util.saveSubscribeList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +25,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    var channelList: ArrayList<ChannelModel> = arrayListOf()
+    var channelListFiltered: ArrayList<ChannelModel> = arrayListOf()
+    var channelListAll: ArrayList<ChannelModel> = arrayListOf()
     private lateinit var adapter: SubscribedChannelsAdapter
 
     override fun onCreateView(
@@ -71,6 +67,8 @@ class HomeFragment : Fragment() {
 
         fetchData(getSubscribeList(requireContext(), "subscribedChannels"))
 
+        subscribeToTopics(FirebaseMessaging.getInstance())
+
     }
 
     private fun fetchData(subscribeList: List<String>) {
@@ -81,11 +79,11 @@ class HomeFragment : Fragment() {
                     response: Response<List<ChannelModel>>
                 ) {
                     response.body()?.let {
-                        channelList = it as ArrayList<ChannelModel>
+                        channelListAll = it as ArrayList<ChannelModel>
                     }
-                    Log.i("Channel", channelList.toString())
+                    Log.i("Channel", channelListAll.toString())
 
-                    channelList = channelList.filter {
+                    channelListFiltered = channelListAll.filter {
                         subscribeList.contains(it.channelTopic)
                     } as ArrayList<ChannelModel>
 
@@ -98,7 +96,7 @@ class HomeFragment : Fragment() {
                             LinearLayoutManager(requireContext())
                         subscribedChannelsRcView.isNestedScrollingEnabled = false
                         subscribedChannelsRcView.setHasFixedSize(true)
-                        adapter = SubscribedChannelsAdapter(channelList)
+                        adapter = SubscribedChannelsAdapter(channelListFiltered)
                         adapter.onItemClick = ::onItemClick
                         subscribedChannelsRcView.adapter = adapter
                     }
@@ -136,5 +134,18 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private fun subscribeToTopics(firebaseMessaging: FirebaseMessaging) {
+        val list = getSubscribeList(requireContext(), "subscribedChannels")
+
+        channelListAll.forEach {
+            firebaseMessaging.unsubscribeFromTopic(it.channelTopic)
+        }
+        // firebaseMessaging.subscribeToTopic("all")
+        list.forEach {
+            Log.i("SUB TOPICS", "subscribeToTopics: $it")
+            firebaseMessaging.subscribeToTopic(it)
+        }
     }
 }
