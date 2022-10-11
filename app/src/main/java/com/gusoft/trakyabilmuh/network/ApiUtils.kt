@@ -13,5 +13,10 @@ class ApiUtils {
         fun getMessageDAO(): MessageDAO {
             return RetrofitClient.getClient(BASE_URL).create(MessageDAO::class.java)
         }
+
+
+        fun getChannelDAO(): ChannelDAO {
+            return RetrofitClient.getClient(BASE_URL).create(ChannelDAO::class.java)
+        }
     }
 }
