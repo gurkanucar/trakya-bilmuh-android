@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface MessageDAO {
 
     @GET("/api/message")
-    fun getMessages(@Query(value = "type", encoded = true) type: String): Call<List<MessageModel>>
+    fun getMessages(@Query(value = "channelId", encoded = true) type: Long): Call<List<MessageModel>>
 
 }

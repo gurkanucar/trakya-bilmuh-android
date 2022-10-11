@@ -41,14 +41,13 @@ class MessageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.noDataFoundText.visibility = View.VISIBLE
-        val messageType: MessageTypes = arguments?.get("messageType") as MessageTypes
-        Log.i("MESSAGE FRAGMENT", "onViewCreated: $messageType")
-        fetchData(messageType)
+        val channelId: Long = arguments?.get("channelId") as Long
+        fetchData(channelId)
 
     }
 
-    private fun fetchData(messageType: MessageTypes) {
-        ApiUtils.getMessageDAO().getMessages(messageType.toString()).enqueue(
+    private fun fetchData(channelId: Long) {
+        ApiUtils.getMessageDAO().getMessages(channelId).enqueue(
             object : Callback<List<MessageModel>> {
                 override fun onResponse(
                     call: Call<List<MessageModel>>,

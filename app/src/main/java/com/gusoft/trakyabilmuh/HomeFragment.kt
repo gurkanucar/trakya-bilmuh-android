@@ -112,23 +112,10 @@ class HomeFragment : Fragment() {
 
     fun onItemClick(channel: ChannelModel, position: Int) {
         Toast.makeText(requireContext(), channel.channelName, Toast.LENGTH_SHORT).show()
-
-//        val bundle = Bundle()
-//        bundle.putParcelable("messageType", MessageTypes.FIRST_GRADE)
-//        Navigation.findNavController(binding.root)
-//            .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
-
-//        channelList.forEach {
-//            if (it.id == channel.id) {
-//                it.isSubscribed = !it.isSubscribed
-//            }
-//        }
-//        saveSubscribeList(
-//            requireContext(),
-//            channelList.filter { it.isSubscribed }.map { it.channelTopic },
-//            "subscribedChannels"
-//        )
-//        adapter.notifyItemChanged(position)
+        val bundle = Bundle()
+        bundle.putLong("channelId", channel.id)
+        Navigation.findNavController(binding.root)
+            .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
     }
 
     override fun onDestroy() {
@@ -142,7 +129,7 @@ class HomeFragment : Fragment() {
         channelListAll.forEach {
             firebaseMessaging.unsubscribeFromTopic(it.channelTopic)
         }
-       firebaseMessaging.subscribeToTopic("announcements")
+        firebaseMessaging.subscribeToTopic("announcements")
         list.forEach {
             Log.i("SUB TOPICS", "subscribeToTopics: $it")
             firebaseMessaging.subscribeToTopic(it)
