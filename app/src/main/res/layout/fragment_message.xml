@@ -7,17 +7,35 @@
 
     <TextView
         android:id="@+id/noDataFoundText"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Veri Yok!"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/messages_rc_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/channelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:text="Channel Name"
+            android:textAlignment="center"
+            android:textColor="#323232"
+            android:textSize="29sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messages_rc_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </FrameLayout>

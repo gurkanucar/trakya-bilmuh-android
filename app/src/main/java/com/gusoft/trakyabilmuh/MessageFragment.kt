@@ -42,6 +42,8 @@ class MessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.noDataFoundText.visibility = View.VISIBLE
         val channelId: Long = arguments?.get("channelId") as Long
+        val channelName: String = arguments?.get("channelName") as String
+        binding.channelName.text = channelName
         fetchData(channelId)
 
     }

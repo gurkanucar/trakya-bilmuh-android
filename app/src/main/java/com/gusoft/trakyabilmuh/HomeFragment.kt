@@ -114,6 +114,7 @@ class HomeFragment : Fragment() {
         Toast.makeText(requireContext(), channel.channelName, Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         bundle.putLong("channelId", channel.id)
+        bundle.putString("channelName", channel.channelName)
         Navigation.findNavController(binding.root)
             .navigate(R.id.action_homeFragment_to_messageFragment, bundle)
     }
