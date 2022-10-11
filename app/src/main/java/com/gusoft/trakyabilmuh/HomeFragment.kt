@@ -142,7 +142,7 @@ class HomeFragment : Fragment() {
         channelListAll.forEach {
             firebaseMessaging.unsubscribeFromTopic(it.channelTopic)
         }
-        // firebaseMessaging.subscribeToTopic("all")
+       firebaseMessaging.subscribeToTopic("announcements")
         list.forEach {
             Log.i("SUB TOPICS", "subscribeToTopics: $it")
             firebaseMessaging.subscribeToTopic(it)
