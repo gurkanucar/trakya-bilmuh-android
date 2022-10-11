@@ -21,12 +21,13 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="20dp">
+
             <ImageView
                 android:id="@+id/channelSettings"
-                android:layout_gravity="end"
-                android:background="@drawable/notifications_active"
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:background="@drawable/notifications_active" />
 
             <TextView
                 android:id="@+id/foodTitle"
@@ -72,6 +73,44 @@
                 android:textSize="21dp" />
         </LinearLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/announcementButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#FFC107"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/campaign" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Duyurular"
+                    android:textAlignment="center"
+                    android:textColor="#323232"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,77 +121,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/aboutSchoolButton"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/subscribed_channels_rc_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/rounded_btn_1"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="5dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/school" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Okul ve Bolum Hakkinda"
-                        android:textAlignment="center"
-                        android:textColor="#323232"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/announcementButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#FFC107"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="0.3"
-                            android:background="@drawable/campaign" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.7"
-                            android:text="Duyurular"
-                            android:textAlignment="center"
-                            android:textColor="#323232"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-
+                    android:layout_margin="30dp"
+                    android:text="Kanallari bildirim simgesine basip duzenleyebilirsiniz!"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
