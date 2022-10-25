@@ -1,7 +1,7 @@
 
 # Trakya Bilmuh - Non Official University Notification and Announcements App
 
-Thanks to this project, students can join channels created by teachers and they can get inform about lessons, internships and job opporunities.
+Thanks to this project, students can join channels created by teachers and they can get information about lessons, internships, and job opportunities.
 
 #### The Project consists of 3 parts:
 
@@ -11,7 +11,7 @@ Thanks to this project, students can join channels created by teachers and they 
 
 ### Backend
 
-[https://github.com/gurkanucar/trakya-bilmuh-fe](https://github.com/gurkanucar/trakya-bilmuh-fe)
+[https://github.com/gurkanucar/trakya-bilmuh-be](https://github.com/gurkanucar/trakya-bilmuh-be)
 
 ### Frontend:
 
